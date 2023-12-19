@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Page</title>
+
+    <style>
+        /* Your CSS styles remain the same */
+        body {
+            font-family: "Lato", sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #login-form {
+            text-align: left;
+            width: 300px;
+            background-color: #ff6961; /* Red color for the login form */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        #login-form label {
+            display: block;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        #login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        #login-form button {
+            width: 100%;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #login-form button:hover {
+            background-color: #45a049;
+        }
+
+        .forgot-password-link,
+        .new-user-link {
+            display: block;
+            margin-top: 10px;
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .forgot-password-link:hover,
+        .new-user-link:hover {
+            text-decoration: underline;
+        }
+
+        .new-user-link {
+            float: right;
+        }
+
+        #login-form {
+            /* Updated styling for demonstration */
+            text-align: left;
+            width: 300px;
+            background-color: #ff6961; /* Red color for the login form */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="login-form">
+        <h1>Login</h1>
+        <label for="login-username">Username:</label>
+        <input type="text" id="login-username" name="login-username" required>
+        <label for="login-password">Password:</label>
+        <input type="password" id="login-password" name="login-password" required>
+        <button type="submit" onclick="submitForm()">Submit</button>
+        <a href="#" class="forgot-password-link">Forgot Password?</a>
+        <a href="#" class="new-user-link">New User</a>
+    </div>
+
+    <script>
+         function submitForm() {
+            // Get values from form fields
+            var username = document.getElementById("login-username").value;
+            var password = document.getElementById("login-password").value;
+
+            // Store user data in localStorage
+            localStorage.setItem("username", username);
+            localStorage.setItem("password", password);
+
+            // Log values to the console
+            console.log("Username: " + localStorage.getItem("username"));
+            console.log("Password: " + localStorage.getItem("password"));
+
+            // Redirect to the homepage
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+
+</html>
